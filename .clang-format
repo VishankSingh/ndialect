@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+# IndentWidth: 4            # 4 spaces is readable for 10k LOC
+# ColumnLimit: 100          # avoid very long lines in assembler output
+# UseTab: Never
+# BreakBeforeBraces: Attach
+# AllowShortFunctionsOnASingleLine: Inline
+# AllowShortIfStatementsOnASingleLine: false
+# AllowShortLoopsOnASingleLine: false
+# ConstructorInitializerAllOnOneLineOrOnePerLine: true
+# PointerAlignment: Left
+# SortIncludes: true
+# IncludeBlocks: Preserve
+# DerivePointerAlignment: false
+# SpacesBeforeTrailingComments: 2
+# SpaceBeforeParens: ControlStatements
+# AlignConsecutiveAssignments: true
+# AlignConsecutiveDeclarations: true
+# ReflowComments: true
+
+AlwaysBreakTemplateDeclarations: Yes
+# BinPackParameters: false

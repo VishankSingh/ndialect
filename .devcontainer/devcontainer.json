@@ -1,0 +1,40 @@
+{
+    "name": "LLVM 22 MLIR Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "llvm-vs-code-extensions.vscode-mlir",
+                "llvm-vs-code-extensions.vscode-clangd",
+                "ms-vscode.cpptools-extension-pack",
+                "twxs.cmake",
+                "ms-vscode.vscode-lldb"
+            ],
+            "settings": {
+                "clangd.path": "/usr/bin/clangd",
+                "clangd.arguments": [
+                    "--compile-commands-dir=${workspaceFolder}/build",
+                    "--background-index",
+                    "--clang-tidy",
+                    "-j=2"
+                ],
+                "C_Cpp.intelliSenseEngine": "disabled",
+                "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+                "mlir.server.path": "/usr/local/bin/mlir-lsp-server",
+                "mlir.tblgen-path": "/usr/local/bin/mlir-tblgen"
+            }
+        }
+    },
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined",
+        "--shm-size=4gb"
+    ],
+    "mounts": [
+        "source=llvm-ccache-storage,target=/root/.cache/ccache,type=volume"
+    ],
+    "remoteUser": "root"
+}
