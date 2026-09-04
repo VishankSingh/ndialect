@@ -3,4 +3,5 @@ build/
 temp/
 .clangd
 scratchpad.txt
+*scratchpad.md
 *.mlir

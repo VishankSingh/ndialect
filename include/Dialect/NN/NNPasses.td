@@ -7,7 +7,6 @@ def NNStaticEval : Pass<"nn-static-eval", "::mlir::func::FuncOp"> {
         Later, it will run constant folding and graph fusion here.
     }];
     
-    // The C++ namespace and constructor to generate
-    let cppNamespace = "::mlir::nn";
+    // The constructor to generate
     let constructor = "mlir::nn::createNNStaticEvalPass()";
 }

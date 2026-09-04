@@ -22,6 +22,10 @@ RUN wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.
     mlir-22-tools \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y \
+    libclang-22-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN ln -s /usr/bin/clang-22 /usr/bin/clang && \
     ln -s /usr/bin/clang++-22 /usr/bin/clang++ && \
     ln -s /usr/bin/clangd-22 /usr/bin/clangd && \

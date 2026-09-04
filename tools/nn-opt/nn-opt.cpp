@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
     registry.insert<mlir::nn::NNDialect>();
 
     // Register our optimization passes
-    mlir::nn::registerPasses(); // <-- Add this
+    mlir::nn::registerNNPasses(); // <-- Changed from registerPasses
 
     return mlir::asMainReturnCode(
         mlir::MlirOptMain(argc, argv, "NN optimizer driver\n", registry)
